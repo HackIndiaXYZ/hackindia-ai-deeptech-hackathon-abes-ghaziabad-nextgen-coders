@@ -515,6 +515,94 @@ export default function App() {
                   )}
                 </Panel>
 
+
+                <Panel colors={colors} title="Active Bookings">
+                    <Panel colors={colors} title="Urgent Parking Request">
+                  <div
+                    style={{
+                      background: "rgba(239,68,68,0.08)",
+                      border: "1px solid rgba(239,68,68,0.3)",
+                      borderRadius: 16,
+                      padding: 18,
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: 20,
+                        fontWeight: 700,
+                        color: "#fca5a5",
+                        marginBottom: 8,
+                      }}
+                    >
+                      🚨 Emergency Parking Allocation
+                    </div>
+
+                    <div
+                      style={{
+                        color: "#cbd5e1",
+                        lineHeight: 1.7,
+                        marginBottom: 16,
+                      }}
+                    >
+                      For ambulance, emergency guests, VIP visitors, delivery vans,
+                      or urgent society access.
+                    </div>
+
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr 1fr",
+                        gap: 14,
+                      }}
+                    >
+                      <Input
+                        label="Vehicle Number"
+                        placeholder="e.g. DL01AB1234"
+                      />
+
+                      <Select
+                        label="Emergency Type"
+                        options={[
+                          { label: "Ambulance", value: "ambulance" },
+                          { label: "Fire Service", value: "fire" },
+                          { label: "VIP Guest", value: "vip" },
+                          { label: "Emergency Delivery", value: "delivery" },
+                        ]}
+                      />
+                    </div>
+
+                    <div style={{ marginTop: 18 }}>
+                        <Button
+                          colors={{
+                            primary: "#ef4444",
+                            secondary: "#dc2626",
+                          }}
+                          onClick={() => {
+                            alert("🚨 Urgent parking slot allocated successfully!");
+                          }}
+                        >
+                          Allocate Priority Slot
+                        </Button>
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: 16,
+                        padding: 12,
+                        borderRadius: 12,
+                        background: "rgba(255,255,255,0.03)",
+                        color: "#fca5a5",
+                      }}
+                    >
+                      Smart AI engine reserves nearest available priority slot
+                      automatically.
+                    </div>
+                  </div>
+                </Panel>
+
+                </Panel>
+
+
                 <Panel colors={colors} title="Active Bookings">
                   <BookingsList colors={colors} bookings={bookings} />
                 </Panel>
