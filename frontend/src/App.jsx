@@ -511,10 +511,7 @@ export default function App() {
                     Smart Slot Allocation
                   </div>
 
-                  <div style={{ marginTop: 10, color: "#cbd5e1" }}>
-                    Automatically assigns the best available parking slot
-                    based on availability and priority.
-                  </div>
+
                 </div>
 
                 <div
@@ -537,10 +534,6 @@ export default function App() {
                     AI Number Plate OCR
                   </div>
 
-                  <div style={{ marginTop: 10, color: "#cbd5e1" }}>
-                    AI scans vehicle number plates automatically using OCR
-                    detection system.
-                  </div>
                 </div>
 
                 <div
@@ -563,10 +556,7 @@ export default function App() {
                     Security Guard Dashboard
                   </div>
 
-                  <div style={{ marginTop: 10, color: "#cbd5e1" }}>
-                    Guards can quickly check-in/check-out vehicles and
-                    monitor parking violations.
-                  </div>
+
                 </div>
 
                 <div
@@ -589,10 +579,7 @@ export default function App() {
                     Emergency Parking
                   </div>
 
-                  <div style={{ marginTop: 10, color: "#cbd5e1" }}>
-                    Supports urgent parking allocation and automatic fine
-                    generation for rule violations.
-                  </div>
+
                 </div>
               </div>
 
@@ -630,7 +617,6 @@ export default function App() {
                     "Guard Verifies Entry",
                     "AI OCR Detects Plate",
                     "Parking Monitoring",
-                    "Fine Management",
                   ].map((step, index) => (
                     <div
                       key={index}
