@@ -38,7 +38,7 @@ export default function App() {
   const [fines, setFines] = useState([]); // {id, vehicleNo, amount, reason, at, status, bookingId}
 
   // ---------- UI state ----------
-  const [activeTab, setActiveTab] = useState("dashboard"); // dashboard | booking | guard | admin | ai
+ const [activeTab, setActiveTab] = useState("home");// dashboard | booking | guard | admin | ai
   const [selectedSlot, setSelectedSlot] = useState(null); // slot object for popup
 
   // ---------- Booking form ----------
@@ -416,17 +416,253 @@ export default function App() {
 
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "28px 18px 60px" }}>
         {/* Title + Problem Statement */}
-        <div style={{ background: colors.panel, border: `1px solid ${colors.border}`, borderRadius: 18, padding: 20 }}>
-          <h1 style={{ margin: 0, fontSize: 34 }}>
-            Smart Visitor Parking Management System 🚗
-          </h1>
-          <p style={{ margin: "10px 0 0", color: colors.muted }}>
-            AI-powered visitor parking for residential societies: booking, allocation, monitoring, enforcement.
-          </p>
-        </div>
+
 
         {/* Tabs */}
         <div style={{ marginTop: 18 }}>
+
+          {activeTab === "home" && (
+            <>
+              <div
+                style={{
+                  padding: 30,
+                  borderRadius: 24,
+                  background:
+                    "linear-gradient(135deg, rgba(59,130,246,0.18), rgba(139,92,246,0.12))",
+                  border: `1px solid ${colors.border}`,
+                  marginBottom: 30,
+                  textAlign: "center",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 48,
+                    fontWeight: 800,
+                    marginBottom: 12,
+                  }}
+                >
+                  🚗 Smart Visitor Parking
+                </div>
+
+                <div
+                  style={{
+                    fontSize: 22,
+                    color: "#cbd5e1",
+                    maxWidth: 900,
+                    margin: "0 auto",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  AI-powered smart parking management system for residential
+                  societies with automatic slot allocation, AI number plate
+                  detection, security monitoring, fine management, and urgent
+                  parking handling.
+                </div>
+
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: 20,
+                    marginTop: 30,
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <Button
+                    colors={colors}
+                    onClick={() => setActiveTab("booking")}
+                  >
+                    Book Parking
+                  </Button>
+
+                  <Button
+                    colors={colors}
+                    variant="ghost"
+                    onClick={() => setActiveTab("ai")}
+                  >
+                    AI Number Plate Detection
+                  </Button>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
+                  gap: 20,
+                }}
+              >
+                <div
+                  style={{
+                    background: "rgba(255,255,255,0.03)",
+                    borderRadius: 20,
+                    padding: 24,
+                    border: `1px solid ${colors.border}`,
+                  }}
+                >
+                  <div style={{ fontSize: 38 }}>🅿</div>
+                  <div
+                    style={{
+                      fontSize: 24,
+                      fontWeight: 700,
+                      marginTop: 12,
+                    }}
+                  >
+                    Smart Slot Allocation
+                  </div>
+
+                  <div style={{ marginTop: 10, color: "#cbd5e1" }}>
+                    Automatically assigns the best available parking slot
+                    based on availability and priority.
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    background: "rgba(255,255,255,0.03)",
+                    borderRadius: 20,
+                    padding: 24,
+                    border: `1px solid ${colors.border}`,
+                  }}
+                >
+                  <div style={{ fontSize: 38 }}>🤖</div>
+
+                  <div
+                    style={{
+                      fontSize: 24,
+                      fontWeight: 700,
+                      marginTop: 12,
+                    }}
+                  >
+                    AI Number Plate OCR
+                  </div>
+
+                  <div style={{ marginTop: 10, color: "#cbd5e1" }}>
+                    AI scans vehicle number plates automatically using OCR
+                    detection system.
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    background: "rgba(255,255,255,0.03)",
+                    borderRadius: 20,
+                    padding: 24,
+                    border: `1px solid ${colors.border}`,
+                  }}
+                >
+                  <div style={{ fontSize: 38 }}>🛡</div>
+
+                  <div
+                    style={{
+                      fontSize: 24,
+                      fontWeight: 700,
+                      marginTop: 12,
+                    }}
+                  >
+                    Security Guard Dashboard
+                  </div>
+
+                  <div style={{ marginTop: 10, color: "#cbd5e1" }}>
+                    Guards can quickly check-in/check-out vehicles and
+                    monitor parking violations.
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    background: "rgba(255,255,255,0.03)",
+                    borderRadius: 20,
+                    padding: 24,
+                    border: `1px solid ${colors.border}`,
+                  }}
+                >
+                  <div style={{ fontSize: 38 }}>🚨</div>
+
+                  <div
+                    style={{
+                      fontSize: 24,
+                      fontWeight: 700,
+                      marginTop: 12,
+                    }}
+                  >
+                    Emergency Parking
+                  </div>
+
+                  <div style={{ marginTop: 10, color: "#cbd5e1" }}>
+                    Supports urgent parking allocation and automatic fine
+                    generation for rule violations.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  marginTop: 40,
+                  padding: 30,
+                  borderRadius: 24,
+                  background: "rgba(255,255,255,0.03)",
+                  border: `1px solid ${colors.border}`,
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 30,
+                    fontWeight: 700,
+                    marginBottom: 20,
+                    textAlign: "center",
+                  }}
+                >
+                  🚀 System Workflow
+                </div>
+
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
+                    gap: 18,
+                    textAlign: "center",
+                  }}
+                >
+                  {[
+                    "Visitor Books Slot",
+                    "AI Allocates Slot",
+                    "Guard Verifies Entry",
+                    "AI OCR Detects Plate",
+                    "Parking Monitoring",
+                    "Fine Management",
+                  ].map((step, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        padding: 18,
+                        borderRadius: 16,
+                        background: "rgba(255,255,255,0.04)",
+                        border: `1px solid ${colors.border}`,
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: 30,
+                          fontWeight: 800,
+                          marginBottom: 10,
+                          color: "#60a5fa",
+                        }}
+                      >
+                        {index + 1}
+                      </div>
+
+                      <div style={{ fontWeight: 600 }}>
+                        {step}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+
+
           {activeTab === "dashboard" && (
             <>
               <StatsRow colors={colors} stats={stats} />
@@ -868,6 +1104,7 @@ export default function App() {
 
 function TopBar({ colors, activeTab, setActiveTab }) {
   const tabs = [
+    { id: "home", label: "Home" },
     { id: "dashboard", label: "Dashboard" },
     { id: "booking", label: "Booking" },
     { id: "guard", label: "Guard" },
